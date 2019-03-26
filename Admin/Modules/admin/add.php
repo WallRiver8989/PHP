@@ -189,25 +189,6 @@
 
                     <br/>
 
-                    <!--Avatar-->
-                    <div class="row">
-                        <label class="col-sm-2 control-label">Avatar: </label>
-                        <div class="col-sm-8">
-                            <input type="file" class="form-control" name="avatar" value="<?php echo $data['avatar']?>">
-
-                            <?php if(isset($error['avatar'])):?>
-                                <p class="text-danger"><?php echo $error['avatar']?></p>
-                            <?php endif ?>
-
-                        </div>
-                        <div class="offset-col-sm-2">
-
-                        </div>
-
-                    </div>
-
-                    <br/>
-
                     <!--Password-->
                     <div class="row">
                         <label class="col-sm-2 control-label">Mật Khẩu: </label>
