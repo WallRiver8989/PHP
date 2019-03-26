@@ -1,11 +1,11 @@
 
 <?php
     require_once __DIR__. "../../Autoload/autoload.php";
-
+    
     $id = intval(getInput('id'));
-    $sql = "SELECT * FROM products WHERE ID = $id";
+    $sql = "SELECT * FROM products WHERE ID = $id ";
     $product = $db->fetchsql($sql);
-
+    //_debug($cate);
 ?>
 
   <?php require_once __DIR__. "../../User/Layouts/Header.php"; ?>
@@ -14,21 +14,7 @@
 
 
   <!-- catg header banner section -->
-  <section id="aa-catg-head-banner">
-   <img src="../Public/Frontend/img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
-   <div class="aa-catg-head-banner-area">
-     <div class="container">
-      <div class="aa-catg-head-banner-content">
-        <h2>T-Shirt</h2>
-        <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Product</a></li>
-          <li class="active">T-shirt</li>
-        </ol>
-      </div>
-     </div>
-   </div>
-  </section>
+
   <!-- / catg header banner section -->
 
   <!-- product category -->
@@ -44,7 +30,7 @@
                   <div class="aa-product-view-slider">
                     <div id="demo-1" class="simpleLens-gallery-container">
                       <div class="simpleLens-container">
-                        <div class="simpleLens-big-image-container"><a class="aa-product-img" href="product_detail.php?id=<?php echo $item['ID']; ?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a></div>
+                        <div class="simpleLens-big-image-container"><a class="a-product-img" href=""><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a></div>
                       </div>
 
                     </div>
@@ -108,6 +94,7 @@
                 <!-- start single product item -->
 
                 <?php require_once __DIR__. "/RelateProduct.php"; ?>
+
 
               </ul>
 

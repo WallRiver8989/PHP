@@ -1,7 +1,6 @@
 <?php
     require_once __DIR__. "../../Autoload/autoload.php";
 
-
     $result = $db->fetchAll("productcategories");
     $sql = "SELECT * FROM products ORDER BY PromotionPrice DESC LIMIT 0,8 ";
     $result1 = $db->fetchsql($sql);
@@ -18,7 +17,7 @@
             <div class="aa-product-inner">
               <!-- start prduct navigation -->
                <ul class="nav nav-tabs aa-products-tab">
-
+                 <br>
                  <h2 class="text-center">SẢN PHẨM KHUYẾN MÃI HÀNG ĐẦU</h2>
                 </ul>
                 <!-- Tab panes -->
@@ -32,7 +31,7 @@
                       <?php foreach ($result1 as $item): ?>
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID']; ?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a>
+                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID'];?>$cate=<?php echo $item['CategoryID'];?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
                               <h4 class="aa-product-title"><a href="#"><?php echo $item['Name'] ?></a></h4>

@@ -1,10 +1,10 @@
 <?php
     require_once __DIR__. "../../Autoload/autoload.php";
 
-    $id = intval(getInput('id'));
-
-    $sql = "SELECT * FROM products WHERE CategoryID = $id LIMIT 0,8";
+    $id =  intval(getInput('id'));
+    $sql = "SELECT * FROM products WHERE CategoryID = 2 And ID != $id LIMIT 0,8";
     $result = $db->fetchsql($sql);
+    //_debug($result);
  ?>
 
 <section id="aa-product">
@@ -30,7 +30,7 @@
                       <?php foreach ($result as $item): ?>
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="product_detail.php?id=<?php echo $item['ID']; ?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>"  width="250px" height="300px "alt="<?php echo $item['Name']; ?>"></a>
+                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID'];?>?cate=<?php echo $item['CategoryID'];?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>"  width="250px" height="300px "alt="<?php echo $item['Name']; ?>"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
                               <h4 class="aa-product-title"><a href="#"><?php echo $item['Name'] ?></a></h4>
@@ -63,7 +63,7 @@
                       </ul>
 
                     </div>
-                    <!-- / men product category -->
+
 
 
               </div>
