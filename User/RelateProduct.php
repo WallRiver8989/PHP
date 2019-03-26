@@ -1,13 +1,11 @@
 <?php
     require_once __DIR__. "../../Autoload/autoload.php";
 
+    $id = intval(getInput('id'));
 
-    $result = $db->fetchAll("productcategories");
-    $sql = "SELECT * FROM products ORDER BY PromotionPrice DESC LIMIT 0,8 ";
-    $result1 = $db->fetchsql($sql);
+    $sql = "SELECT * FROM products WHERE CategoryID = $id LIMIT 0,8";
+    $result = $db->fetchsql($sql);
  ?>
-
-<?php require_once __DIR__. "../../User/Layouts/Header.php";?>
 
 <section id="aa-product">
   <div class="container">
@@ -19,7 +17,7 @@
               <!-- start prduct navigation -->
                <ul class="nav nav-tabs aa-products-tab">
 
-                 <h2 class="text-center">SẢN PHẨM KHUYẾN MÃI HÀNG ĐẦU</h2>
+
                 </ul>
                 <!-- Tab panes -->
                   <div class="tab-content">
@@ -29,10 +27,10 @@
                       <ul class="aa-product-catg">
                         <!-- start single product item -->
 
-                      <?php foreach ($result1 as $item): ?>
+                      <?php foreach ($result as $item): ?>
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID']; ?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a>
+                            <a class="aa-product-img" href="product_detail.php?id=<?php echo $item['ID']; ?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>"  width="250px" height="300px "alt="<?php echo $item['Name']; ?>"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
                               <h4 class="aa-product-title"><a href="#"><?php echo $item['Name'] ?></a></h4>
@@ -63,7 +61,7 @@
 
 
                       </ul>
-                      <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
+
                     </div>
                     <!-- / men product category -->
 
