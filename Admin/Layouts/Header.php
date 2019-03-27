@@ -53,19 +53,19 @@
                </a>
             </li>
 
-            <li class="nav-item" <?php echo isset($open) && $open == 'product' ? 'active' : ''?>>
+            <li class="nav-item <?php echo isset($open) && $open == 'product' ? 'active' : ''?>"">
                <a class="nav-link" href="<?php echo modules("product") ?>">
                <i class="fas fa-fw fa-archive"></i>
                <span>Các Sản Phẩm</span></a>
             </li>
 
-            <li class="nav-item">
-               <a class="nav-link" href="tables.html">
+            <li class="nav-item <?php echo isset($open) && $open == 'orders' ? 'active' : ''?>">
+               <a class="nav-link" href="<?php echo modules("orders") ?>">
                <i class="fas fa-fw fa-clipboard-check"></i>
                <span>Quản lý đơn hàng</span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item ">
                <a class="nav-link" href="<?php echo modules("admin") ?>">
                <i class="fas fa-fw fa-user-secret"></i>
                <span>Admin</span></a>

@@ -102,7 +102,7 @@
     {
 
         // return $url  = "http://codedoan.com/";
-        return $url  = "http://localhost:7777/php";
+        return $url  = "http://localhost/php";
     }
 
 
@@ -158,6 +158,11 @@
         {
             header("location: ".base_url().$url);exit();
         }
+    }
+
+    function formatPrice($number){
+        $number = intval($number);
+        return $number = number_format($number,0,',','.')."đ";
     }
 
 
