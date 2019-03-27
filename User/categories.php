@@ -31,7 +31,7 @@
                       <?php foreach ($result1 as $item): ?>
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID'];?>$cate=<?php echo $item['CategoryID'];?>"><img src="<?php echo base_url() ?>/Public/Frontend/img/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a>
+                            <a class="aa-product-img" href="product_details.php?id=<?php echo $item['ID'];?>$cate=<?php echo $item['CategoryID'];?>"><img src="<?php echo base_url() ?>/Public/uploads/product/<?php echo $item['Image']; ?>" alt="<?php echo $item['Name']; ?>"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
                               <h4 class="aa-product-title"><a href="#"><?php echo $item['Name'] ?></a></h4>
